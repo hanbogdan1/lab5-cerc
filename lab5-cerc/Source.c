@@ -1,5 +1,4 @@
-﻿
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 
 #define max 100
@@ -77,10 +76,26 @@ void test() {
 	printf("%d", *p);
 }
 
+
+
+int adunare(int a, int b) {
+	return a + b;
+}
+
+int inmultire(int a, int b) {
+	return a * b;
+}
+
+typedef int(*funct)(int a, int b);
+
+typedef const int* (**functie[200])() ;
 int main()
 {
-	cerinta1();
-
+	//cerinta1();
+	funct a = &adunare;
+	printf("%d \n", a(3, 2));
+	 a = &inmultire;
+	printf("%d \n", a(3, 2));
 	int x;
 	scanf("%d", &x);
 }
